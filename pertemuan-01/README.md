@@ -9,37 +9,19 @@
 </div>
 
 ---
+Apa itu DevOps?
+DevOps adalah sebuah paradigma atau budaya kerja yang mengintegrasikan tim pengembang (Development) dengan tim operasional IT (Operations) untuk mempercepat siklus hidup pengembangan perangkat lunak. DevOps bukan sekadar toolset, melainkan kolaborasi lintas fungsi yang bertujuan untuk menghasilkan perangkat lunak secara berkelanjutan, cepat, dan dengan kualitas yang lebih stabil.
 
-## 🎯 Tujuan Pembelajaran
-
-Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:
-
-| No | Kemampuan yang Dicapai |
-|:--:|------------------------|
-| 1 | Memahami **filosofi dan budaya DevOps** sebagai pendekatan modern dalam pengembangan perangkat lunak |
-| 2 | Menjelaskan **DevOps lifecycle** dan hubungan antar tahapannya |
-| 3 | Membedakan pendekatan **Development vs Operations tradisional** dengan pendekatan DevOps |
-| 4 | Menyiapkan **development environment** yang dibutuhkan untuk praktikum selanjutnya |
-
+Tujuan utamanya adalah menghilangkan "tembok pemisah" yang seringkali membuat rilis aplikasi terhambat. Dengan DevOps, tanggung jawab tidak lagi terkotak-kotak; pengembang juga peduli pada performa aplikasi di server, dan tim operasional memahami alur kode yang dibuat. Manfaatnya mencakup frekuensi rilis yang lebih tinggi, waktu pemasaran (time-to-market) yang lebih singkat, serta kemampuan pemulihan sistem yang lebih cepat jika terjadi kegagalan.
 ---
+Mengapa DevOps Penting?
+Di era digital saat ini, kecepatan adalah kunci kompetisi. Tanpa DevOps, perusahaan akan terjebak dalam proses manual yang lambat dan rentan kesalahan (human error). DevOps penting karena:
 
-## 📚 Materi Pembelajaran
+Agilitas Bisnis: Memungkinkan perusahaan merespons masukan pengguna dalam hitungan jam, bukan bulan.
 
-### 1️⃣ Apa Itu DevOps?
+Stabilitas: Penggunaan CI/CD (Continuous Integration/Continuous Delivery) memastikan setiap perubahan kode diuji secara otomatis sebelum naik ke produksi.
 
-> *"DevOps bukan hanya tentang tools, melainkan tentang bagaimana tim bekerja sama untuk menghasilkan software yang lebih baik, lebih cepat, dan lebih andal."*
-
-**DevOps** adalah singkatan dari **Development** dan **Operations** — sebuah pendekatan yang menyatukan tim pengembang (*developers*) dan tim operasional (*operations*) untuk bekerja secara kolaboratif sepanjang siklus hidup aplikasi.
-
-#### 🔄 Perbedaan Pendekatan Tradisional vs DevOps
-
-| Aspek | Tradisional | DevOps |
-|-------|-------------|--------|
-| **Tim** | Terpisah (silo) | Terintegrasi |
-| **Deployment** | Manual, jarang | Otomatis, sering |
-| **Feedback** | Lambat (mingguan/bulanan) | Cepat (harian/per jam) |
-| **Tanggung Jawab** | "Bukan urusan saya" | Tanggung jawab bersama |
-| **Infrastruktur** | Statis | Dinamis (Infrastructure as Code) |
+Skalabilitas: Dengan teknologi seperti Docker dan Kubernetes, infrastruktur dapat dikelola sebagai kode (Infrastructure as Code).
 
 ---
 
