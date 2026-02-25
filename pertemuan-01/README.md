@@ -1,182 +1,32 @@
-🎭 Pertemuan 01: Pengantar DevOps — Filosofi, Budaya, dan Persiapan Lingkungan
-📅 Pertemuan	⏱️ Durasi	📊 Tingkat
-01	2 x 50 menit	⭐ Pemula
-🎯 Tujuan Pembelajaran
-Setelah menyelesaikan praktikum ini, mahasiswa diharapkan mampu:
+Laporan Praktikum DevOps - Modul 01: Implementasi Docker Dasar
+Nama: Hafifa Mulyana
 
-No	Kemampuan yang Dicapai
-1	Memahami filosofi dan budaya DevOps sebagai pendekatan modern dalam pengembangan perangkat lunak
-2	Menjelaskan DevOps lifecycle dan hubungan antar tahapannya
-3	Membedakan pendekatan Development vs Operations tradisional dengan pendekatan DevOps
-4	Menyiapkan development environment yang dibutuhkan untuk praktikum selanjutnya
-📚 Materi Pembelajaran
-1️⃣ Apa Itu DevOps?
-"DevOps bukan hanya tentang tools, melainkan tentang bagaimana tim bekerja sama untuk menghasilkan software yang lebih baik, lebih cepat, dan lebih andal."
+NIM: 105841104123
 
-DevOps adalah singkatan dari Development dan Operations — sebuah pendekatan yang menyatukan tim pengembang (developers) dan tim operasional (operations) untuk bekerja secara kolaboratif sepanjang siklus hidup aplikasi.
+Topik: Kontainerisasi Web Server Statis
 
-🔄 Perbedaan Pendekatan Tradisional vs DevOps
-Aspek	Tradisional	DevOps
-Tim	Terpisah (silo)	Terintegrasi
-Deployment	Manual, jarang	Otomatis, sering
-Feedback	Lambat (mingguan/bulanan)	Cepat (harian/per jam)
-Tanggung Jawab	"Bukan urusan saya"	Tanggung jawab bersama
-Infrastruktur	Statis	Dinamis (Infrastructure as Code)
-2️⃣ Prinsip Utama DevOps (CALMS)
-DevOps dibangun di atas 5 pilar utama yang dikenal sebagai CALMS:
+Pemahaman Konsep Kontainerisasi
+Praktikum ini bertujuan untuk memahami bagaimana Docker mengubah cara kita mengelola aplikasi. Secara tradisional, kita harus menginstal web server secara manual di sistem operasi, namun dengan Docker, kita menggunakan konsep Isolation (Isolasi).
 
-┌─────────────────────────────────────────────────────────────┐
-│                        CALMS Framework                       │
-├─────────────┬─────────────┬─────────────┬─────────────┬─────┤
-│   Culture   │  Automation │    Lean     │ Measurement │Share│
-│      🤝     │      🤖     │     🎯      │      📊     │  📢 │
-└─────────────┴─────────────┴─────────────┴─────────────┴─────┘
-Prinsip	Penjelasan	Contoh Praktik
-Culture	Membangun budaya kolaborasi dan kepercayaan	Daily standup, blameless postmortem
-Automation	Mengotomatisasi proses yang berulang	CI/CD pipeline, automated testing
-Lean	Menghilangkan pemborosan dalam alur kerja	Mengurangi handoff, batch size kecil
-Measurement	Mengukur segala sesuatu untuk perbaikan	Metrics, logging, monitoring
-Sharing	Berbagi pengetahuan dan tanggung jawab	Documentation, knowledge base
-3️⃣ DevOps Lifecycle
-Siklus DevOps adalah proses berkelanjutan (continuous) yang tidak pernah berhenti:
+Beberapa keunggulan utama yang dipelajari dalam praktikum ini:
 
-    ╔═══════════════════════════════════════════════════════════╗
-    ║                    ♾️ DevOps Infinity Loop                 ║
-    ╠═══════════════════════════════════════════════════════════╣
-    ║                                                           ║
-    ║         DEVELOPMENT                    OPERATIONS         ║
-    ║    ┌─────────────────────┐      ┌─────────────────────┐  ║
-    ║    │  Plan → Code → Build│  →   │ Deploy → Operate →  │  ║
-    ║    │         ↓           │      │        ↓            │  ║
-    ║    │       Test          │  ←   │     Monitor         │  ║
-    ║    └─────────────────────┘      └─────────────────────┘  ║
-    ║                                                           ║
-    ║    Continuous Integration ←──→ Continuous Delivery        ║
-    ╚═══════════════════════════════════════════════════════════╝
-Penjelasan Setiap Tahap:
-Tahap	Deskripsi	Tools yang Umum Digunakan
-Plan	Perencanaan fitur dan sprint	Jira, Trello, GitHub Issues
-Code	Penulisan kode dan version control	Git, VS Code, GitHub
-Build	Kompilasi dan packaging aplikasi	Maven, npm, Docker
-Test	Pengujian otomatis	Jest, pytest, Selenium
-Deploy	Deployment ke environment	Jenkins, GitLab CI, ArgoCD
-Operate	Menjalankan aplikasi di production	Kubernetes, Docker Swarm
-Monitor	Pemantauan performa dan kesehatan	Prometheus, Grafana, ELK
-4️⃣ Mengapa DevOps Penting?
-📈 Manfaat DevOps
-⚡ Deployment lebih cepat — dari bulanan menjadi harian
-🐛 Deteksi bug lebih awal — melalui automated testing
-🔄 Recovery lebih cepat — saat terjadi masalah
-🤝 Kolaborasi lebih baik — antar tim
-😊 Kepuasan tim meningkat — mengurangi pekerjaan repetitif
-🔧 Tugas Praktikum
-📋 Prasyarat
-Sebelum memulai, pastikan Anda memiliki:
+Standarisasi Lingkungan: Docker memastikan bahwa aplikasi berjalan dalam kondisi yang sama, baik di laptop pengembang maupun di server produksi, sehingga meminimalkan risiko "error lingkungan".
 
-Laptop/PC dengan RAM minimal 8GB
-Koneksi internet yang stabil
-Akses administrator pada komputer Anda
-Task 1: Instalasi Development Environment
-1.1 Install Git
-Windows:
+Layered File System: Setiap instruksi dalam Dockerfile membentuk lapisan (layer) yang efisien, sehingga proses build berikutnya bisa berjalan lebih cepat berkat adanya caching.
 
-# Menggunakan winget
-winget install Git.Git
+Manajemen Resource: Kontainer tidak memerlukan sistem operasi utuh untuk berjalan, melainkan hanya membutuhkan base image minimalis seperti Alpine Linux yang ukurannya sangat kecil dan ringan.
 
-# Atau download dari https://git-scm.com/download/win
-macOS:
+Di dunia industri, teknologi ini memungkinkan perusahaan seperti Airbnb untuk meluncurkan ratusan layanan baru secara mandiri tanpa saling mengganggu. Docker menjadi pondasi utama sebelum kita melangkah ke tahap otomatisasi yang lebih kompleks seperti CI/CD Pipeline.
 
-brew install git
-Linux (Ubuntu/Debian):
+Dokumentasi Aktivitas Praktikum
+Berdasarkan pengujian yang telah saya lakukan, berikut adalah rincian teknisnya:
 
-sudo apt update && sudo apt install git -y
-1.2 Konfigurasi Git
-# Konfigurasi identitas (WAJIB)
-git config --global user.name "Nama Lengkap Anda"
-git config --global user.email "email@student.unismuh.ac.id"
+Konfigurasi Dockerfile: Saya membuat instruksi untuk menggunakan nginx:alpine sebagai basis dan menyalin file index.html ke direktori default server Nginx.
 
-# Konfigurasi tambahan (DISARANKAN)
-git config --global init.defaultBranch main
-git config --global core.editor "code --wait"
+Proses Build: Menggunakan perintah docker build -t praktikum-docker:v1 . untuk menciptakan image lokal dengan nama tag tertentu.
 
-# Verifikasi konfigurasi
-git config --list
-1.3 Install Docker Desktop
-Platform	Langkah Instalasi
-Windows	Download dari docker.com/products/docker-desktop, aktifkan WSL2
-macOS	brew install --cask docker atau download dari website
-Linux	Jalankan: curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
-Verifikasi instalasi:
+Deployment Kontainer: Kontainer dijalankan dengan nama praktikum-hafifa menggunakan port mapping -p 8080:80.
 
-docker --version
-docker run hello-world
-1.4 Install Visual Studio Code + Extensions
-Download VS Code dari code.visualstudio.com
-Install extensions berikut:
-Extension	Fungsi
-Docker (ms-azuretools.vscode-docker)	Manajemen container
-GitLens (eamodio.gitlens)	Git supercharged
-YAML (redhat.vscode-yaml)	Syntax highlighting YAML
-Remote - Containers (ms-vscode-remote.remote-containers)	Development dalam container
-Install via terminal:
+Verifikasi Sistem: Pemeriksaan melalui perintah docker ps menunjukkan kontainer telah aktif (Up) dengan ID 98d081633b1c.
 
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension eamodio.gitlens
-code --install-extension redhat.vscode-yaml
-code --install-extension ms-vscode-remote.remote-containers
-1.5 Buat Akun GitHub
-Jika belum memiliki akun GitHub:
-
-Kunjungi github.com
-Klik Sign up
-Gunakan email institusi untuk mendapat GitHub Education Pack
-Task 2: Dokumentasi dan Refleksi
-Buat laporan praktikum dengan format berikut:
-
-📝 Isi Laporan
-Pemahaman DevOps (minimal 200 kata)
-
-Jelaskan dengan bahasa Anda sendiri: Apa itu DevOps?
-Mengapa DevOps penting dalam industri software saat ini?
-Berikan contoh perusahaan yang sukses menerapkan DevOps
-Screenshot Bukti Instalasi
-
-Output git --version dan git config --list
-Output docker --version dan docker run hello-world
-Tampilan VS Code dengan extensions yang terinstall
-Refleksi Pribadi (minimal 100 kata)
-
-Apa harapan Anda dari praktikum DevOps ini?
-Skill apa yang ingin Anda kuasai di akhir semester?
-📤 Format Submission
-📁 NIM_Nama_Pertemuan01/
-│
-├── 📄 README.md              # Laporan utama (format Markdown)
-│
-├── 📁 screenshots/
-│   ├── 🖼️ 01-git-version.png
-│   ├── 🖼️ 02-git-config.png
-│   ├── 🖼️ 03-docker-version.png
-│   ├── 🖼️ 04-docker-hello-world.png
-│   └── 🖼️ 05-vscode-extensions.png
-│
-└── 📄 refleksi.md            # Refleksi pribadi
-✅ Checklist Sebelum Submit
- Git terinstall dan terkonfigurasi dengan benar
- Docker dapat menjalankan container hello-world
- VS Code terinstall dengan semua extensions yang diminta
- Laporan ditulis dengan bahasa yang baik dan benar
- Semua screenshot jelas dan terbaca
- File disusun sesuai struktur yang diminta
-📚 Referensi Bacaan
-Sumber	Link
-The Phoenix Project (Book)	Novel tentang transformasi DevOps
-DevOps Handbook	itrevolution.com
-Atlassian DevOps Guide	atlassian.com/devops
-Docker Get Started	docs.docker.com/get-started
-⏰ Deadline
-📅 Batas Pengumpulan
-Sebelum Pertemuan 02
-Selamat mengerjakan! 🚀
-
-"The journey of a thousand miles begins with a single step."
+Hasil Akhir: Aplikasi web statis telah berhasil dijalankan di dalam kontainer terisolasi dan dapat diakses melalui browser pada alamat http://localhost:8080.
